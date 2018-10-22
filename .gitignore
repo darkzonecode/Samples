@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WpfRelayCommandWithParam/.vs/WpfRelayCommandWithParam/v15
+/WpfRelayCommandWithParam/WpfRelayCommandWithParam/obj/Debug
+/WpfRelayCommandWithParam/WpfRelayCommandWithParam/bin/Debug
