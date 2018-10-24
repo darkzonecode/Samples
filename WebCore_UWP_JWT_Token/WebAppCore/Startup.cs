@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using WebAppCore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebAppCore
 {
@@ -40,6 +42,24 @@ namespace WebAppCore
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            // Add this to setup verify token ***********************************************************
+            // Setup external authentication
+            services.AddAuthentication()
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["TokenIssuer"],
+                        ValidAudience = Configuration["TokenAudience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["SecretKey"]))
+                    };
+                });
+            // *******************************************************************************************
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -58,6 +78,7 @@ namespace WebAppCore
                 app.UseHsts();
             }
 
+            // Temporary disable https in project settings debug, The UWP App HttpClient will show certificte error when run localy
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

@@ -9,6 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBox x:Name="TBoxLogin" HorizontalAlignment="Left" Margin="61,107,0,0" Text="" VerticalAlignment="Top" Width="308" Header="Login:"/>
+        <TextBox x:Name="TBoxPassword" HorizontalAlignment="Left" Margin="502,107,0,0" Text="" VerticalAlignment="Top" Width="326" Header="Password:"/>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="80,257,0,0" VerticalAlignment="Top" Click="BtnLogin_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="61,395,0,0" Text="Your JWT token:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TxtJwtToken" HorizontalAlignment="Stretch" Margin="61,448,50,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
