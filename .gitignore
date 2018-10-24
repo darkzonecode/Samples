@@ -2,6 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/WpfRelayCommandWithParam/.vs/WpfRelayCommandWithParam/v15
-/WpfRelayCommandWithParam/WpfRelayCommandWithParam/obj/Debug
-/WpfRelayCommandWithParam/WpfRelayCommandWithParam/bin/Debug
+/WpfRelayCommandWithParam/.vs
+/WpfRelayCommandWithParam/WpfRelayCommandWithParam/obj
+/WpfRelayCommandWithParam/WpfRelayCommandWithParam/bin
+/WebCore_UWP_JWT_Token/.vs
+/WebCore_UWP_JWT_Token/WebAppCore/obj
+/WebCore_UWP_JWT_Token/UWPApp/obj
+/WebCore_UWP_JWT_Token/UWPApp/UWPApp_TemporaryKey.pfx
+/WebCore_UWP_JWT_Token/WebAppCore/bin
