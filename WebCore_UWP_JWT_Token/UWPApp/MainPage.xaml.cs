@@ -38,7 +38,9 @@ namespace UWPApp
 
         public async void GetTokenAsync(string userName, string userPassword)
         {
-            Uri uri = new Uri("http://localhost:54214/api/token");
+            Uri uri = new Uri("http://localhost:63183/api/token");  
+
+            //Uri uri = new Uri("https://localhost:44357/api/token");
 
             //string body = @"{""email"" : ""{userName}"",""password"" :""Password1@""}";
             string body = "{\"email\" : \"" + userName + "\",\"password\":\"" + userPassword + "\"}";
