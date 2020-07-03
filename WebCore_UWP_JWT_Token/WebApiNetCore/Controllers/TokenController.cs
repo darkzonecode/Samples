@@ -15,7 +15,7 @@ namespace WebApiNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TokenController : Controller
+    public class TokenController : ControllerBase
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
@@ -31,9 +31,6 @@ namespace WebApiNetCore.Controllers
             _configuration = configuration;
         }
 
-
-
-
         #region Create JWT token.
 
 
@@ -43,6 +40,7 @@ namespace WebApiNetCore.Controllers
         {
             IdentityUser appUser = await _userManager.FindByEmailAsync(model.Email);
 
+            
 
             if (appUser != null)
             {
